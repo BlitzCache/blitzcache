@@ -1,0 +1,141 @@
+# Copyright (C) 2026 Ersin KOÇ
+# This file is distributed under the same license as the Blitz Cache package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Blitz Cache 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/ersinkoc/blitz-cache/issues\n"
+"POT-Creation-Date: 2026-01-01 12:00+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2026-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: includes/class-blitz-cache-activator.php:409
+msgid "Blitz Cache requires PHP %s or higher. You are running PHP %s."
+msgstr ""
+
+#: includes/class-blitz-cache-activator.php:418
+msgid "Blitz Cache requires WordPress %s or higher."
+msgstr ""
+
+#: includes/class-blitz-cache-activator.php:537
+msgid "Blitz Cache: Please add define('WP_CACHE', true); to your wp-config.php"
+msgstr ""
+
+#: includes/class-blitz-cache-activator.php:578
+msgid "Blitz Cache Warmup Interval"
+msgstr ""
+
+#: includes/class-blitz-cache-cloudflare.php:1585
+msgid "Connection successful!"
+msgstr ""
+
+#: includes/class-blitz-cache-cloudflare.php:1592
+msgid "Unknown error"
+msgstr ""
+
+#: admin/class-blitz-cache-admin.php:1885
+msgid "Blitz Cache"
+msgstr ""
+
+#: admin/class-blitz-cache-admin.php:1940
+msgid "Dashboard"
+msgstr ""
+
+#: admin/class-blitz-cache-admin.php:1941
+msgid "Settings"
+msgstr ""
+
+#: admin/class-blitz-cache-admin.php:1942
+msgid "Cloudflare"
+msgstr ""
+
+#: admin/class-blitz-cache-admin.php:1943
+msgid "Tools"
+msgstr ""
+
+#: admin/class-blitz-cache-admin.php:1977
+msgid "Permission denied."
+msgstr ""
+
+#: admin/class-blitz-cache-admin.php:1987
+msgid "All cache purged successfully!"
+msgstr ""
+
+#: admin/class-blitz-cache-admin.php:2005
+msgid "Page cache purged!"
+msgstr ""
+
+#: admin/class-blitz-cache-admin.php:2018
+msgid "Cache warmup completed!"
+msgstr ""
+
+#: admin/class-blitz-cache-admin.php:2052
+msgid "Settings saved!"
+msgstr ""
+
+#: admin/class-blitz-cache-admin-bar.php:1917
+msgid "Purge This Page"
+msgstr ""
+
+#: admin/class-blitz-cache-admin-bar.php:1926
+msgid "Purge All Cache"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1906
+msgid "Blitz Cache"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1911
+msgid "Status:"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1913
+msgid "Active"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1915
+msgid "Inactive"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1920
+msgid "Cached Pages:"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1924
+msgid "Hit Ratio:"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1928
+msgid "Cache Size:"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1933
+msgid "Purge All"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1936
+msgid "Warm Cache"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1942
+msgid "Cloudflare:"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1944
+msgid "Connected"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1946
+msgid "Error"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1948
+msgid "Disconnected"
+msgstr ""
+
+#: admin/class-blitz-cache-dashboard-widget.php:1952
+msgid "View Settings"
+msgstr ""

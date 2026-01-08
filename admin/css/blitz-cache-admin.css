@@ -1,0 +1,262 @@
+/**
+ * Blitz Cache Admin Styles
+ */
+
+.blitz-cache-wrap {
+    max-width: 1200px;
+}
+
+.blitz-cache-wrap h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.blitz-cache-wrap .dashicons-performance {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+}
+
+.blitz-cache-content {
+    margin-top: 20px;
+}
+
+.blitz-cache-section {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.blitz-cache-section h2 {
+    margin-top: 0;
+}
+
+.blitz-cache-dashboard .blitz-cache-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.blitz-cache-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.blitz-cache-card h3 {
+    margin-top: 0;
+    font-size: 14px;
+    color: #646970;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.blitz-cache-number {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1d2327;
+    line-height: 1.2;
+}
+
+.blitz-cache-status .status-active {
+    color: #00a32a;
+    font-weight: 600;
+}
+
+.blitz-cache-status .status-inactive {
+    color: #d63638;
+    font-weight: 600;
+}
+
+.blitz-cache-actions {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.blitz-cache-actions h3 {
+    margin-top: 0;
+}
+
+.blitz-cache-actions .button {
+    margin-right: 10px;
+}
+
+.blitz-cache-actions .button .dashicons {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.blitz-cache-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.blitz-cache-cloudflare-status,
+.blitz-cache-timestamps {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.blitz-cache-cloudflare-status h3,
+.blitz-cache-timestamps h3 {
+    margin-top: 0;
+}
+
+.status-connected {
+    color: #00a32a;
+    font-weight: 600;
+}
+
+.status-error {
+    color: #d63638;
+    font-weight: 600;
+}
+
+.status-disconnected {
+    color: #646970;
+}
+
+/* Form styles */
+.form-table th {
+    width: 200px;
+    padding: 15px 10px 15px 0;
+}
+
+.form-table td {
+    padding: 15px 10px;
+}
+
+.form-table .description {
+    font-style: italic;
+    color: #646970;
+}
+
+/* Modal styles */
+.blitz-cache-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999999;
+}
+
+.blitz-cache-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000000;
+    width: 500px;
+    max-width: 90%;
+}
+
+.blitz-cache-modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #ccd0d4;
+}
+
+.blitz-cache-modal-header h2 {
+    margin: 0;
+}
+
+.blitz-cache-modal-body {
+    padding: 20px;
+}
+
+.blitz-cache-modal-footer {
+    padding: 20px;
+    border-top: 1px solid #ccd0d4;
+    text-align: right;
+}
+
+.blitz-cache-modal-footer .button {
+    margin-left: 10px;
+}
+
+/* Dashboard widget */
+.blitz-cache-widget {
+    text-align: left;
+}
+
+.blitz-cache-stats {
+    margin: 15px 0;
+}
+
+.blitz-cache-stat {
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .blitz-cache-info {
+        grid-template-columns: 1fr;
+    }
+
+    .blitz-cache-dashboard .blitz-cache-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Loading states */
+.blitz-cache-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.blitz-cache-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #0073aa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Success/Error messages */
+.blitz-cache-message {
+    padding: 12px;
+    margin: 15px 0;
+    border-left: 4px solid;
+    background: #fff;
+}
+
+.blitz-cache-message.success {
+    border-color: #00a32a;
+    background: #f0f6fc;
+}
+
+.blitz-cache-message.error {
+    border-color: #d63638;
+    background: #fcf0f1;
+}
+
+.blitz-cache-message p {
+    margin: 0;
+}
