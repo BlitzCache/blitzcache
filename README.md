@@ -4,7 +4,7 @@
 [![PHP](https://img.shields.io/badge/PHP-8.0%2B-purple.svg)](https://php.net/)
 [![License](https://img.shields.io/badge/License-GPLv2-green.svg)](LICENSE)
 [![Tests](https://github.com/BlitzCache/blitzcache/workflows/Tests/badge.svg)](https://github.com/BlitzCache/blitzcache/actions)
-[![codecov](https://codecov.io/gh/ersinkoc/blitz-cache/branch/main/graph/badge.svg)](https://codecov.io/gh/ersinkoc/blitz-cache)
+[![codecov](https://codecov.io/gh/BlitzCache/blitzcache/branch/main/graph/badge.svg)](https://codecov.io/gh/BlitzCache/blitzcache)
 
 > **Zero-config WordPress caching with Cloudflare Edge integration.** Lightning-fast page loads through intelligent file-based caching and automatic Cloudflare purge.
 

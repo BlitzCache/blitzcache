@@ -1,5 +1,5 @@
 {
-    "name": "ersinkoc/blitz-cache",
+    "name": "BlitzCache/blitzcache",
     "description": "Zero-config WordPress caching with Cloudflare Edge integration",
     "type": "wordpress-plugin",
     "keywords": [
@@ -17,7 +17,7 @@
     "authors": [
         {
             "name": "Ersin KOÇ",
-            "email": "hello@ersinkoc.com",
+            "email": "info@ersinkoc.com",
             "homepage": "https://github.com/ersinkoc",
             "role": "Developer"
         }

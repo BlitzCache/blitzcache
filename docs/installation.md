@@ -186,7 +186,7 @@ cd /path/to/wordpress/wp-content/plugins/
 git clone https://github.com/BlitzCache/blitzcache.git
 
 # Or use GitHub CLI
-gh repo clone ersinkoc/blitz-cache
+gh repo clone BlitzCache/blitzcache
 
 # Set proper permissions
 chown -R www-data:www-data blitz-cache/
@@ -198,7 +198,7 @@ chmod -R 755 blitz-cache/
 ```json
 {
     "require": {
-        "ersinkoc/blitz-cache": "^1.0"
+        "BlitzCache/blitzcache": "^1.0"
     }
 }
 ```

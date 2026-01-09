@@ -1747,7 +1747,7 @@ JAVASCRIPT;
 ```php
 <?php
 class Blitz_Cache_Updater {
-    private string $github_repo = 'ersinkoc/blitz-cache'; // TODO: Set actual repo
+    private string $github_repo = 'BlitzCache/blitzcache'; // TODO: Set actual repo
     private string $plugin_file;
     private string $plugin_slug = 'blitz-cache';
     private ?object $github_response = null;
