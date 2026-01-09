@@ -87,8 +87,8 @@ export function Hero() {
                     <div className="text-2xl font-bold text-blue-600">245 MB</div>
                     <div className="text-xs text-muted-foreground">Cache Size</div>
                   </div>
-                  <div className="rounded-xl bg-purple-500/10 p-4 border border-purple-500/20">
-                    <div className="text-2xl font-bold text-purple-600">1,247</div>
+                  <div className="rounded-xl bg-indigo-500/10 p-4 border border-indigo-500/20">
+                    <div className="text-2xl font-bold text-indigo-600">1,247</div>
                     <div className="text-xs text-muted-foreground">Pages Cached</div>
                   </div>
                 </div>

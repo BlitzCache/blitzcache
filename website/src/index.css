@@ -60,11 +60,11 @@
 /* Custom styles */
 @layer components {
   .gradient-text {
-    @apply bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-emerald-500 to-cyan-500 bg-clip-text text-transparent;
   }
 
   .gradient-bg {
-    @apply bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-500;
+    @apply bg-gradient-to-br from-emerald-600 via-cyan-600 to-blue-600;
   }
 
   .bg-grid {

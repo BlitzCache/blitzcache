@@ -43,7 +43,7 @@ export function Pricing() {
 
           <Card className="border-2 hover:border-blue-500/20 transition-all duration-300 hover:shadow-lg">
             <CardContent className="pt-8 text-center">
-              <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white mb-6">
+              <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white mb-6">
                 <Infinity className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-4">Give Back to Community</h3>
