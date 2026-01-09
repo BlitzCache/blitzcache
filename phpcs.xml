@@ -84,11 +84,11 @@
 
     <!-- Include specific files -->
     <arg name="extensions" value="php"/>
-    <file>admin</file>
-    <file>includes</file>
-    <file>blitz-cache.php</file>
-    <file>uninstall.php</file>
-    <file>advanced-cache.php</file>
+    <file>blitz-cache/admin</file>
+    <file>blitz-cache/includes</file>
+    <file>blitz-cache/blitz-cache.php</file>
+    <file>blitz-cache/uninstall.php</file>
+    <file>blitz-cache/advanced-cache.php</file>
 
     <!-- Custom sniffs -->
     <rule ref="WordPress.NamingConventions.PrefixAllGlobals">

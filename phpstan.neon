@@ -1,8 +1,8 @@
 parameters:
     level: 9
     paths:
-        - includes
-        - admin
+        - blitz-cache/includes
+        - blitz-cache/admin
     excludePaths:
         - vendor
         - tests
@@ -35,6 +35,6 @@ parameters:
     typeAliases:
         HtmlString: string
     excludePaths:
-        - includes/integrations/*
+        - blitz-cache/includes/integrations/*
     bootstrap: %currentWorkingDirectory%/phpstan-bootstrap.php
     memoryLimit: 2G
