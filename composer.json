@@ -1,5 +1,5 @@
 {
-    "name": "BlitzCache/blitzcache",
+    "name": "blitzcache/blitzcache",
     "description": "Zero-config WordPress caching with Cloudflare Edge integration",
     "type": "wordpress-plugin",
     "keywords": [

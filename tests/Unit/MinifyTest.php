@@ -18,14 +18,14 @@ class MinifyTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        Monkey::setUp();
+        \Brain\Monkey\setup();
 
         Functions\when('apply_filters')->returnArg();
     }
 
     protected function tearDown(): void
     {
-        Monkey::tearDown();
+        \Brain\Monkey\tearDown();
         parent::tearDown();
     }
 

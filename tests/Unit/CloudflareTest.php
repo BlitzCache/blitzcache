@@ -18,7 +18,7 @@ class CloudflareTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        Monkey::setUp();
+        \Brain\Monkey\setup();
 
         Functions\when('__')->returnArg();
         Functions\when('do_action')->returnArg();
@@ -29,12 +29,12 @@ class CloudflareTest extends TestCase
             'workers_enabled' => false,
             'workers_route' => ''
         ]);
-        Functions\when('Blitz_Cache_Options::set_cloudflare')->returnTrue();
+        Functions\when('Blitz_Cache_Options::set_cloudflare')->justReturn(true);
     }
 
     protected function tearDown(): void
     {
-        Monkey::tearDown();
+        \Brain\Monkey\tearDown();
         parent::tearDown();
     }
 
@@ -63,7 +63,7 @@ class CloudflareTest extends TestCase
     /**
      * Test test_connection returns error on invalid token
      */
-    public function function testTestConnectionReturnsErrorOnInvalidToken()
+    public function testTestConnectionReturnsErrorOnInvalidToken()
     {
         $mockResponse = [
             'success' => false,
@@ -453,7 +453,7 @@ class CloudflareTest extends TestCase
         Functions\when('wp_remote_request')->justReturn([
             'body' => json_encode($mockResponse)
         ]);
-        Functions\when('Blitz_Cache_Options::set_cloudflare')->returnTrue();
+        Functions\when('Blitz_Cache_Options::set_cloudflare')->justReturn(true);
 
         $cloudflare = new Blitz_Cache_Cloudflare();
         $cloudflare->purge_all();

@@ -18,7 +18,7 @@ class WarmupTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        Monkey::setUp();
+        \Brain\Monkey\setup();
 
         Functions\when('__')->returnArg();
         Functions\when('do_action')->returnArg();
@@ -32,7 +32,7 @@ class WarmupTest extends TestCase
 
     protected function tearDown(): void
     {
-        Monkey::tearDown();
+        \Brain\Monkey\tearDown();
         parent::tearDown();
     }
 

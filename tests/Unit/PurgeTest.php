@@ -18,17 +18,17 @@ class PurgeTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        Monkey::setUp();
+        \Brain\Monkey\setup();
 
         Functions\when('__')->returnArg();
         Functions\when('do_action')->returnArg();
         Functions\when('Blitz_Cache_Options::get_cloudflare')->justReturn([]);
-        Functions\when('Blitz_Cache_Options::set_cloudflare')->returnTrue();
+        Functions\when('Blitz_Cache_Options::set_cloudflare')->justReturn(true);
     }
 
     protected function tearDown(): void
     {
-        Monkey::tearDown();
+        \Brain\Monkey\tearDown();
         parent::tearDown();
     }
 
@@ -77,7 +77,7 @@ class PurgeTest extends TestCase
     public function testOnPostSaveDoesNotPurgeNonPublishedPosts()
     {
         define('DOING_AUTOSAVE', false);
-        Functions\when('wp_is_post_revision')->returnFalse();
+        Functions\when('wp_is_post_revision')->justReturn(false);
 
         $purge = new Blitz_Cache_Purge();
 
@@ -95,12 +95,12 @@ class PurgeTest extends TestCase
     public function testOnPostSavePurgesPublishedPosts()
     {
         define('DOING_AUTOSAVE', false);
-        Functions\when('wp_is_post_revision')->returnFalse();
+        Functions\when('wp_is_post_revision')->justReturn(false);
         Functions\when('get_permalink')->justReturn('http://example.com/post-123/');
         Functions\when('get_post_type')->justReturn('post');
-        Functions\when('get_post_type_archive_link')->returnFalse();
+        Functions\when('get_post_type_archive_link')->justReturn(false);
         Functions\when('get_the_category')->return([]);
-        Functions\when('get_the_tags')->returnFalse();
+        Functions\when('get_the_tags')->justReturn(false);
         Functions\when('get_author_posts_url')->return('http://example.com/author/john/');
         Functions\when('get_year_link')->return('http://example.com/2024/');
         Functions\when('get_month_link')->return('http://example.com/2024/01/');
@@ -214,7 +214,7 @@ class PurgeTest extends TestCase
         Functions\when('get_post_type')->with(123)->return('post');
         Functions\when('get_post_type_archive_link')->with('post')->return('http://example.com/blog/');
         Functions\when('get_the_category')->with(123)->return([]);
-        Functions\when('get_the_tags')->with(123)->returnFalse();
+        Functions\when('get_the_tags')->with(123)->justReturn(false);
         Functions\when('get_author_posts_url')->with(1)->return('http://example.com/author/john/');
         Functions\when('get_year_link')->with('2024')->return('http://example.com/2024/');
         Functions\when('get_month_link')->with('2024', '01')->return('http://example.com/2024/01/');
@@ -256,7 +256,7 @@ class PurgeTest extends TestCase
         Functions\when('get_post_type')->with(123)->return('post');
         Functions\when('get_post_type_archive_link')->with('post')->return('http://example.com/blog/');
         Functions\when('get_the_category')->with(123)->return([]);
-        Functions\when('get_the_tags')->with(123)->returnFalse();
+        Functions\when('get_the_tags')->with(123)->justReturn(false);
         Functions\when('get_author_posts_url')->with(1)->return('http://example.com/author/john/');
         Functions\when('get_year_link')->with('2024')->return('http://example.com/2024/');
         Functions\when('get_month_link')->with('2024', '01')->return('http://example.com/2024/01/');

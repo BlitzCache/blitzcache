@@ -17,7 +17,7 @@ class OptionsTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        Monkey::setUp();
+        \Brain\Monkey\setup();
 
         // Clear static properties before each test
         $reflection = new \ReflectionClass('BlitzCache\\Blitz_Cache_Options');
@@ -30,7 +30,7 @@ class OptionsTest extends TestCase
         $cloudflare->setValue(null, null);
 
         Functions\when('get_option')->justReturn([]);
-        Functions\when('update_option')->returnTrue();
+        Functions\when('update_option')->justReturn(true);
         Functions\when('wp_salt')->return('test_salt_123456');
         Functions\when('openssl_encrypt')->justReturn('encrypted_data');
         Functions\when('openssl_decrypt')->justReturn('decrypted_data');
@@ -41,7 +41,7 @@ class OptionsTest extends TestCase
 
     protected function tearDown(): void
     {
-        Monkey::tearDown();
+        \Brain\Monkey\tearDown();
         parent::tearDown();
     }
 
@@ -91,7 +91,7 @@ class OptionsTest extends TestCase
     public function testSetUpdatesSettingsCorrectly()
     {
         Functions\when('get_option')->justReturn([]);
-        Functions\when('update_option')->returnTrue();
+        Functions\when('update_option')->justReturn(true);
 
         $result = Blitz_Cache_Options::set([
             'page_cache_enabled' => false,
@@ -115,7 +115,7 @@ class OptionsTest extends TestCase
             'page_cache_ttl' => 86400,
             'cache_logged_in' => false
         ]);
-        Functions\when('update_option')->returnTrue();
+        Functions\when('update_option')->justReturn(true);
 
         Blitz_Cache_Options::set([
             'page_cache_ttl' => 3600,
@@ -168,7 +168,7 @@ class OptionsTest extends TestCase
     public function testSetCloudflareEncryptsApiToken()
     {
         Functions\when('get_option')->justReturn([]);
-        Functions\when('update_option')->returnTrue();
+        Functions\when('update_option')->justReturn(true);
 
         Blitz_Cache_Options::set_cloudflare([
             'api_token' => 'my_secret_token',
@@ -184,7 +184,7 @@ class OptionsTest extends TestCase
     public function testSetCloudflareUpdatesCloudflareSettings()
     {
         Functions\when('get_option')->justReturn([]);
-        Functions\when('update_option')->returnTrue();
+        Functions\when('update_option')->justReturn(true);
 
         $result = Blitz_Cache_Options::set_cloudflare([
             'api_token' => 'test_token',
@@ -287,7 +287,7 @@ class OptionsTest extends TestCase
             'page_cache_enabled' => false,
             'page_cache_ttl' => 100
         ]);
-        Functions\when('update_option')->returnTrue();
+        Functions\when('update_option')->justReturn(true);
 
         Blitz_Cache_Options::reset();
 
@@ -397,7 +397,7 @@ class OptionsTest extends TestCase
     public function testSetDoesNotAffectCloudflareSettings()
     {
         Functions\when('get_option')->justReturn([]);
-        Functions\when('update_option')->returnTrue();
+        Functions\when('update_option')->justReturn(true);
 
         // Set regular settings
         Blitz_Cache_Options::set(['page_cache_enabled' => false]);
@@ -415,7 +415,7 @@ class OptionsTest extends TestCase
     public function testSetCloudflareDoesNotAffectRegularSettings()
     {
         Functions\when('get_option')->justReturn([]);
-        Functions\when('update_option')->returnTrue();
+        Functions\when('update_option')->justReturn(true);
 
         // Set cloudflare settings
         Blitz_Cache_Options::set_cloudflare(['api_token' => 'test']);

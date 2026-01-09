@@ -8,7 +8,7 @@ namespace BlitzCache\Tests\Unit;
 use PHPUnit\Framework\TestCase;
 use Brain\Monkey;
 use Brain\Monkey\Functions;
-use BlitzCache\Blitz_Cache_Cache;
+use \Blitz_Cache_Cache;
 
 /**
  * Test suite for Blitz_Cache_Cache class
@@ -18,7 +18,7 @@ class CacheTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        Monkey::setUp();
+        \Brain\Monkey\setup();
 
         // Define necessary global functions
         Functions\when('__')->returnArg();
@@ -29,14 +29,14 @@ class CacheTest extends TestCase
         Functions\when('wp_json_encode')->returnArg();
         Functions\when('do_action')->returnArg();
         Functions\when('apply_filters')->returnArg();
-        Functions\when('is_ssl')->returnFalse();
-        Functions\when('wp_is_mobile')->returnFalse();
-        Functions\when('is_user_logged_in')->returnFalse();
+        Functions\when('is_ssl')->justReturn(false);
+        Functions\when('wp_is_mobile')->justReturn(false);
+        Functions\when('is_user_logged_in')->justReturn(false);
     }
 
     protected function tearDown(): void
     {
-        Monkey::tearDown();
+        \Brain\Monkey\tearDown();
         parent::tearDown();
     }
 
@@ -97,7 +97,7 @@ class CacheTest extends TestCase
         define('BLITZ_CACHE_CACHE_DIR', '/tmp/cache/');
 
         $_SERVER['REQUEST_METHOD'] = 'GET';
-        Functions\when('is_user_logged_in')->returnTrue();
+        Functions\when('is_user_logged_in')->justReturn(true);
 
         Functions\when('Blitz_Cache_Options::get')->justReturn([
             'page_cache_enabled' => true,
@@ -116,7 +116,7 @@ class CacheTest extends TestCase
         define('BLITZ_CACHE_CACHE_DIR', '/tmp/cache/');
 
         $_SERVER['REQUEST_METHOD'] = 'GET';
-        Functions\when('is_user_logged_in')->returnTrue();
+        Functions\when('is_user_logged_in')->justReturn(true);
 
         Functions\when('Blitz_Cache_Options::get')->justReturn([
             'page_cache_enabled' => true,
@@ -197,7 +197,7 @@ class CacheTest extends TestCase
 
         $_SERVER['HTTP_HOST'] = 'example.com';
         $_SERVER['REQUEST_URI'] = '/test-page/';
-        Functions\when('wp_is_mobile')->returnTrue();
+        Functions\when('wp_is_mobile')->justReturn(true);
 
         Functions\when('Blitz_Cache_Options::get')->justReturn([
             'page_cache_enabled' => true,
@@ -238,7 +238,7 @@ class CacheTest extends TestCase
         Functions\when('do_action')->returnArg();
 
         // Mock get_current_url
-        Functions\when('is_ssl')->returnFalse();
+        Functions\when('is_ssl')->justReturn(false);
         $_SERVER['HTTP_HOST'] = 'example.com';
         $_SERVER['REQUEST_URI'] = '/test/';
 
