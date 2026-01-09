@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Menu, X, Zap } from "lucide-react"
+import { Menu, X, Bolt } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/ThemeToggle"
 
@@ -8,38 +8,48 @@ export function Navigation() {
 
   const navItems = [
     { href: "#features", label: "Features" },
-    { href: "#pricing", label: "Pricing" },
+    { href: "#pricing", label: "Why Free?" },
     { href: "#testimonials", label: "Testimonials" },
     { href: "#faq", label: "FAQ" },
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <a href="/" className="flex items-center space-x-2">
-          <Zap className="h-6 w-6 text-purple-600" />
-          <span className="font-bold text-xl">Blitz Cache</span>
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-20 items-center justify-between">
+        <a href="/" className="flex items-center space-x-3 group">
+          <div className="h-10 w-10 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <Bolt className="h-6 w-6 text-white" />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-black text-xl leading-tight">
+              <span className="text-foreground">Blitz</span>
+              <span className="bg-gradient-to-r from-emerald-500 to-cyan-500 bg-clip-text text-transparent"> Cache</span>
+            </span>
+          </div>
         </a>
 
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-1">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium transition-colors hover:text-purple-600"
+              className="px-4 py-2 text-sm font-medium transition-colors hover:text-emerald-600 hover:bg-emerald-500/10 rounded-lg"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-3">
           <ThemeToggle />
-          <Button variant="ghost" asChild>
-            <a href="https://github.com/ersinkoc/blitz-cache/tree/main/docs">Documentation</a>
+          <Button variant="ghost" size="sm" asChild>
+            <a href="https://github.com/ersinkoc/blitz-cache/tree/main/docs">Docs</a>
           </Button>
-          <Button asChild>
-            <a href="https://github.com/ersinkoc/blitz-cache">View on GitHub</a>
+          <Button size="sm" className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white border-0" asChild>
+            <a href="https://github.com/ersinkoc/blitz-cache/releases">
+              <Bolt className="h-4 w-4 mr-2" />
+              Get Started
+            </a>
           </Button>
         </div>
 
@@ -48,6 +58,7 @@ export function Navigation() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
+            className="p-2 hover:bg-muted rounded-lg transition-colors"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -55,13 +66,13 @@ export function Navigation() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden border-t">
-          <div className="container py-4 space-y-4">
+        <div className="md:hidden border-t border-border">
+          <div className="container py-4 space-y-3">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="block text-sm font-medium"
+                className="block px-4 py-3 text-sm font-medium hover:bg-emerald-500/10 hover:text-emerald-600 rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
@@ -71,8 +82,8 @@ export function Navigation() {
               <Button variant="outline" className="w-full" asChild>
                 <a href="https://github.com/ersinkoc/blitz-cache/tree/main/docs">Documentation</a>
               </Button>
-              <Button className="w-full" asChild>
-                <a href="https://github.com/ersinkoc/blitz-cache">View on GitHub</a>
+              <Button className="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white border-0" asChild>
+                <a href="https://github.com/ersinkoc/blitz-cache/releases">Get Started</a>
               </Button>
             </div>
           </div>
