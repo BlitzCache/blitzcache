@@ -1,4 +1,4 @@
-import { Github, Twitter, Mail, Zap } from "lucide-react"
+import { Github, Twitter, Mail, Bolt } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -6,7 +6,7 @@ export function Footer() {
   const footerLinks = {
     product: [
       { label: "Features", href: "#features" },
-      { label: "Pricing", href: "#pricing" },
+      { label: "Why Free?", href: "#pricing" },
       { label: "Testimonials", href: "#testimonials" },
       { label: "FAQ", href: "#faq" },
     ],
@@ -41,9 +41,14 @@ export function Footer() {
       <div className="container mx-auto max-w-6xl px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           <div className="lg:col-span-2">
-            <a href="/" className="flex items-center space-x-2 mb-4">
-              <Zap className="h-6 w-6 text-purple-600" />
-              <span className="font-bold text-xl">Blitz Cache</span>
+            <a href="/" className="flex items-center space-x-3 mb-4 group">
+              <div className="h-10 w-10 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <Bolt className="h-6 w-6 text-white" />
+              </div>
+              <span className="font-black text-xl">
+                <span className="text-foreground">Blitz</span>
+                <span className="bg-gradient-to-r from-emerald-500 to-cyan-500 bg-clip-text text-transparent"> Cache</span>
+              </span>
             </a>
             <p className="text-sm text-muted-foreground mb-4 max-w-sm">
               Lightning-fast WordPress caching with Cloudflare integration.
@@ -56,7 +61,7 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-purple-600 transition-colors"
+                  className="text-muted-foreground hover:text-emerald-600 transition-colors"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />
@@ -72,7 +77,7 @@ export function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-purple-600 transition-colors"
+                    className="text-sm text-muted-foreground hover:text-emerald-600 transition-colors"
                   >
                     {link.label}
                   </a>
@@ -90,7 +95,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-muted-foreground hover:text-purple-600 transition-colors"
+                    className="text-sm text-muted-foreground hover:text-emerald-600 transition-colors"
                   >
                     {link.label}
                   </a>
@@ -108,7 +113,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-muted-foreground hover:text-purple-600 transition-colors"
+                    className="text-sm text-muted-foreground hover:text-emerald-600 transition-colors"
                   >
                     {link.label}
                   </a>
@@ -126,7 +131,7 @@ export function Footer() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-muted-foreground hover:text-purple-600 transition-colors"
+                    className="text-sm text-muted-foreground hover:text-emerald-600 transition-colors"
                   >
                     {link.label}
                   </a>
@@ -144,7 +149,7 @@ export function Footer() {
                 href="https://github.com/ersinkoc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-purple-600 hover:underline"
+                className="text-emerald-600 hover:underline"
               >
                 Ersin KOÇ
               </a>
@@ -154,7 +159,7 @@ export function Footer() {
                 href="https://github.com/ersinkoc/blitz-cache/blob/main/LICENSE"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-purple-600 transition-colors"
+                className="text-sm text-muted-foreground hover:text-emerald-600 transition-colors"
               >
                 License
               </a>
@@ -162,7 +167,7 @@ export function Footer() {
                 href="https://github.com/ersinkoc/blitz-cache/blob/main/SECURITY.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-purple-600 transition-colors"
+                className="text-sm text-muted-foreground hover:text-emerald-600 transition-colors"
               >
                 Security
               </a>
@@ -170,7 +175,7 @@ export function Footer() {
                 href="https://github.com/ersinkoc/blitz-cache/blob/main/docs/configuration.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-purple-600 transition-colors"
+                className="text-sm text-muted-foreground hover:text-emerald-600 transition-colors"
               >
                 Privacy
               </a>
