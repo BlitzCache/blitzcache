@@ -17,7 +17,7 @@ const features = [
     icon: Zap,
     title: "10x Faster Page Loads",
     description: "Serve cached HTML instead of generating dynamic pages. See instant improvements in page load times.",
-    gradient: "from-purple-500 to-blue-500",
+    gradient: "from-emerald-500 to-cyan-500",
   },
   {
     icon: Cloud,
@@ -47,7 +47,7 @@ const features = [
     icon: RefreshCw,
     title: "Smart Cache Purge",
     description: "Automatically purge related pages when content changes. Keep your cache fresh without manual work.",
-    gradient: "from-indigo-500 to-purple-500",
+    gradient: "from-emerald-500 to-teal-500",
   },
   {
     icon: Gauge,
@@ -59,7 +59,7 @@ const features = [
     icon: Shield,
     title: "WooCommerce Ready",
     description: "Smart handling of cart, checkout, and product pages. E-commerce optimized out of the box.",
-    gradient: "from-violet-500 to-purple-500",
+    gradient: "from-cyan-500 to-blue-500",
   },
   {
     icon: Settings,
@@ -89,9 +89,9 @@ export function Features() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-purple-500/20">
+            <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-emerald-500/20">
               <CardHeader>
                 <div className={`inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r ${feature.gradient} text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <feature.icon className="h-6 w-6" />
