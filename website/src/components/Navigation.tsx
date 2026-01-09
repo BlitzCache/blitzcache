@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Menu, X, Bolt } from "lucide-react"
+import { Menu, X, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/ThemeToggle"
 
@@ -14,89 +14,79 @@ export function Navigation() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 items-center justify-center">
-        <div className="flex items-center space-x-8">
-          <a href="/" className="flex items-center space-x-3 group">
-            <div className="h-10 w-10 rounded-xl bg-emerald-600 flex items-center justify-center group-hover:scale-105 transition-transform">
-              <Bolt className="h-6 w-6 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-black text-xl leading-tight">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="flex h-20 items-center justify-between">
+          <div className="flex items-center">
+            <a href="/" className="flex items-center gap-3 group">
+              <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center group-hover:scale-105 transition-all duration-200 shadow-sm">
+                <Zap className="h-5 w-5 text-white" />
+              </div>
+              <span className="font-bold text-lg tracking-tight">
                 <span className="text-foreground">Blitz</span>
-                <span className="text-emerald-600"> Cache</span>
+                <span className="gradient-text"> Cache</span>
               </span>
-            </div>
-          </a>
+            </a>
+          </div>
 
-          <nav className="hidden md:flex items-center space-x-1 border-l border-border pl-8">
+          <nav className="hidden md:flex items-center gap-2">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="px-4 py-2 text-sm font-medium transition-colors hover:text-emerald-600 hover:bg-emerald-500/10 rounded-lg"
+                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 {item.label}
               </a>
             ))}
           </nav>
-        </div>
 
-        <div className="hidden md:flex items-center space-x-3 absolute right-0 pr-4">
-          <ThemeToggle />
-          <Button variant="ghost" size="sm" asChild>
-            <a href="https://github.com/BlitzCache/blitzcache/tree/main/docs">Docs</a>
-          </Button>
-          <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700 text-white border-0" asChild>
-            <a href="https://github.com/BlitzCache/blitzcache/releases">
-              <Bolt className="h-4 w-4 mr-2" />
-              Get Started
-            </a>
-          </Button>
-        </div>
-
-        <div className="flex items-center gap-2 md:hidden absolute right-0 pr-4">
-          <ThemeToggle />
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-            className="p-2 hover:bg-muted rounded-lg transition-colors"
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Button variant="ghost" size="sm" asChild className="hidden sm:inline-flex">
+              <a href="https://github.com/BlitzCache/blitzcache/tree/main/docs">
+                Docs
+              </a>
+            </Button>
+            <Button size="sm" asChild className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white border-0">
+              <a href="https://github.com/BlitzCache/blitzcache/releases">
+                <Zap className="h-4 w-4 mr-2" />
+                Get Started
+              </a>
+            </Button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+              className="p-2 hover:bg-muted rounded-lg transition-colors md:hidden"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden border-t border-border">
-          <div className="container py-4 space-y-3">
-            <div className="flex items-center justify-center space-x-3 pb-4 border-b border-border">
-              <a href="/" className="flex items-center space-x-2 group" onClick={() => setIsOpen(false)}>
-                <div className="h-8 w-8 rounded-lg bg-emerald-600 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <Bolt className="h-5 w-5 text-white" />
-                </div>
-                <span className="font-black text-lg leading-tight">
-                  <span className="text-foreground">Blitz</span>
-                  <span className="text-emerald-600"> Cache</span>
-                </span>
-              </a>
-            </div>
+        <div className="md:hidden border-t border-border bg-background">
+          <div className="container mx-auto max-w-7xl px-4 py-4 space-y-2">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="block px-4 py-3 text-sm font-medium hover:bg-emerald-500/10 hover:text-emerald-600 rounded-lg transition-colors text-center"
+                className="block px-4 py-2 text-sm font-medium hover:bg-muted rounded-lg transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </a>
             ))}
-            <div className="pt-4 space-y-2">
+            <div className="pt-2 mt-2 border-t border-border space-y-2">
               <Button variant="outline" className="w-full" asChild>
                 <a href="https://github.com/BlitzCache/blitzcache/tree/main/docs">Documentation</a>
               </Button>
-              <Button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white border-0" asChild>
-                <a href="https://github.com/BlitzCache/blitzcache/releases">Get Started</a>
+              <Button className="w-full bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-700 hover:to-cyan-700 text-white border-0" asChild>
+                <a href="https://github.com/BlitzCache/blitzcache/releases">
+                  <Zap className="h-4 w-4 mr-2" />
+                  Get Started
+                </a>
               </Button>
             </div>
           </div>
