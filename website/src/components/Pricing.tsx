@@ -56,20 +56,20 @@ export function Pricing() {
         </div>
 
         <div className="mt-16 text-center">
-          <Card className="max-w-4xl mx-auto border-2 border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/30">
+          <Card className="max-w-4xl mx-auto border-2 border-dashed border-slate-300 dark:border-slate-700 bg-emerald-50 dark:bg-emerald-950/30">
             <CardContent className="pt-8">
               <div className="flex items-center justify-center gap-2 mb-6">
                 <span className="text-4xl">💚</span>
-                <h3 className="text-2xl font-bold">100% Free Forever</h3>
+                <h3 className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">100% Free Forever</h3>
               </div>
-              <p className="text-lg text-muted-foreground mb-4">
+              <p className="text-lg text-emerald-900/80 dark:text-emerald-200/80 mb-4">
                 No hidden fees, no subscriptions, no limits. Just pure performance.
               </p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-emerald-900/70 dark:text-emerald-300/70">
                 Support development on{" "}
                 <a
                   href="https://github.com/sponsors/ersinkoc"
-                  className="text-emerald-600 hover:underline font-medium"
+                  className="text-emerald-700 dark:text-emerald-300 hover:underline font-medium"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
