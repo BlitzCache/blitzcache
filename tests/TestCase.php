@@ -21,6 +21,9 @@ abstract class BlitzCacheTestCase extends TestCase
         \Brain\Monkey\setup();
 
         // Set up test cache directory using the same constant as the plugin
+        if (!defined('BLITZ_CACHE_CACHE_DIR')) {
+            define('BLITZ_CACHE_CACHE_DIR', sys_get_temp_dir() . '/blitz-cache-test/');
+        }
         $this->test_cache_dir = BLITZ_CACHE_CACHE_DIR;
 
         // Create test cache directory

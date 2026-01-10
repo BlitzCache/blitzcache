@@ -193,8 +193,23 @@ class Blitz_Cache_Warmup {
 
     private function update_warmup_stats(): void {
         $stats_file = BLITZ_CACHE_CACHE_DIR . 'stats.json';
-        $stats = json_decode(file_get_contents($stats_file), true) ?: [];
+
+        // Read existing stats if file exists, otherwise start with empty array
+        if (file_exists($stats_file)) {
+            $content = @file_get_contents($stats_file);
+            $stats = $content ? json_decode($content, true) : [];
+        } else {
+            $stats = [];
+        }
+
         $stats['last_warmup'] = time();
-        file_put_contents($stats_file, wp_json_encode($stats));
+
+        // Ensure directory exists
+        $dir = dirname($stats_file);
+        if (!file_exists($dir)) {
+            @mkdir($dir, 0755, true);
+        }
+
+        @file_put_contents($stats_file, wp_json_encode($stats));
     }
 }

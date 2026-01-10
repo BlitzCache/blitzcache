@@ -664,10 +664,33 @@ class Blitz_Cache_Cache {
         }
 
         $stats_file = BLITZ_CACHE_CACHE_DIR . 'stats.json';
-        $stats = json_decode(file_get_contents($stats_file), true) ?: [];
-        $stats['cached_pages'] = count($files);
+
+        // Read existing stats if file exists, otherwise start with default array
+        if (file_exists($stats_file)) {
+            $content = @file_get_contents($stats_file);
+            $stats = $content ? json_decode($content, true) : [];
+        } else {
+            $stats = [
+                'hits' => 0,
+                'misses' => 0,
+                'cached_pages' => 0,
+                'cache_size' => 0,
+                'last_warmup' => 0,
+                'last_purge' => 0,
+                'period_start' => time(),
+            ];
+        }
+
+        $stats['cached_pages'] = count($files ?: []);
         $stats['cache_size'] = $size;
-        file_put_contents($stats_file, wp_json_encode($stats));
+
+        // Ensure directory exists
+        $dir = dirname($stats_file);
+        if (!file_exists($dir)) {
+            @mkdir($dir, 0755, true);
+        }
+
+        @file_put_contents($stats_file, wp_json_encode($stats));
     }
 
     public function get_stats(): array {
